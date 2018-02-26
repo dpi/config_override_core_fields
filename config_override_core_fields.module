@@ -21,6 +21,18 @@ function config_override_core_fields_form_alter(array &$form, FormStateInterface
       $form['logging']['logging']['#config']['key'] = 'search.settings:logging';
       break;
 
+    case 'system_cron_settings':
+      // system.module.
+      // @see \Drupal\system\Form\CronForm
+      $form['cron']['logging']['#config']['key'] = 'system.cron:logging';
+
+      // automated_cron.module.
+      // @see \automated_cron_form_system_cron_settings_alter()
+      if (isset($form['cron']['interval'])) {
+        $form['cron']['interval']['#config']['key'] = 'automated_cron.settings:interval';
+      }
+      break;
+
   }
 
 }
