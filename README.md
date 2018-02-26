@@ -9,9 +9,9 @@ Copyright (C) 2018 Daniel Phin (@dpi)
 This module does not expose any functionality on its own. You may have been
 asked by another module to install this module. 
 
-Recommended for use with [Config Override Indicator][config-override-indicator]
+Recommended for use with [Config Override Indicator][config-override-inspector]
 
-[config-override-Indicator]: https://www.drupal.org/project/coi
+[config-override-inspector]: https://www.drupal.org/project/coi
 
 # License
 
