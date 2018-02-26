@@ -78,6 +78,18 @@ function config_override_core_fields_form_alter(array &$form, FormStateInterface
       $form['maintenance_mode_message']['#config']['key'] = 'system.maintenance:message';
       break;
 
+    case 'system_themes_admin_form':
+      // system.module.
+      // @see \Drupal\system\Form\ThemeAdminForm
+      $form['admin_theme']['admin_theme']['#config']['key'] = 'system.theme:admin';
+
+      if (isset($form['admin_theme']['use_admin_theme'])) {
+        // node.module.
+        // \node_form_system_themes_admin_form_alter
+        $form['admin_theme']['use_admin_theme']['#config']['key'] = 'node.settings:use_admin_theme';
+      }
+      break;
+
   }
 
 }
