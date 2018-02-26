@@ -131,6 +131,16 @@ function config_override_core_fields_form_alter(array &$form, FormStateInterface
       $form['email_canceled']['settings']['user_mail_status_canceled_body']['#config']['key'] = 'user.mail:status_canceled.body';
       break;
 
+    case 'views_ui_admin_settings_advanced':
+      // views_ui.module.
+      // \Drupal\views_ui\Form\AdvancedSettingsForm
+      $form['cache']['skip_cache']['#config']['key'] = 'views.settings:skip_cache';
+      $form['debug']['sql_signature']['#config']['key'] = 'views.settings:sql_signature';
+      if (isset($form['extenders']['display_extenders'])) {
+        $form['extenders']['display_extenders']['#config']['key'] = 'views.settings:display_extenders';
+      }
+      break;
+
   }
 
 }
