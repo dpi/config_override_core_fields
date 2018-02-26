@@ -72,6 +72,12 @@ function config_override_core_fields_form_alter(array &$form, FormStateInterface
       $form["error_page"]["site_404"]['#config']['key'] = 'system.site:page.404';
       break;
 
+    case 'system_site_maintenance_mode':
+      // system.module.
+      // @see \Drupal\system\Form\SiteMaintenanceModeForm
+      $form['maintenance_mode_message']['#config']['key'] = 'system.maintenance:message';
+      break;
+
   }
 
 }
