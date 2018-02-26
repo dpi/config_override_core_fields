@@ -141,6 +141,20 @@ function config_override_core_fields_form_alter(array &$form, FormStateInterface
       }
       break;
 
+    case 'views_ui_admin_settings_basic':
+      // views_ui.module.
+      // \Drupal\views_ui\Form\BasicSettingsForm
+      $form['basic']['ui_show_master_display']['#config']['key'] = 'views.settings:ui.show.master_display';
+      $form['basic']['ui_show_advanced_column']['#config']['key'] = 'views.settings:ui.show.advanced_column';
+      $form['basic']['ui_show_display_embed']['#config']['key'] = 'views.settings:ui.show.display_embed';
+      $form['basic']['ui_exposed_filter_any_label']['#config']['key'] = 'views.settings:ui.exposed_filter_any_label';
+      $form['live_preview']['ui_always_live_preview']['#config']['key'] = 'views.settings:ui.always_live_preview';
+      $form['live_preview']['ui_show_preview_information']['#config']['key'] = 'views.settings:ui.show.preview_information';
+      $form['live_preview']['options']['ui_show_sql_query_enabled']['#config']['key'] = 'views.settings:ui.show.sql_query.enabled';
+      $form['live_preview']['options']['ui_show_sql_query_where']['#config']['key'] = 'views.settings:ui.show.sql_query.where';
+      $form['live_preview']['options']['ui_show_performance_statistics']['#config']['key'] = 'views.settings:ui.show.performance_statistics';
+      $form['live_preview']['options']['ui_show_additional_queries']['#config']['key'] = 'views.settings:ui.show.additional_queries';
+      break;
   }
 
 }
