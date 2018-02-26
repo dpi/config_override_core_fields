@@ -41,6 +41,18 @@ function config_override_core_fields_form_alter(array &$form, FormStateInterface
       $form['temporary_maximum_age']['#config']['key'] = 'system.file:temporary_maximum_age';
       break;
 
+    case 'system_logging_settings':
+      // system.module.
+      // @see \Drupal\system\Form\LoggingForm
+      $form['error_level']['#config']['key'] = 'system.logging:error_level';
+
+      // dblog.module.
+      // @see \dblog_form_system_logging_settings_alter()
+      if (isset($form['dblog_row_limit'])) {
+        $form['dblog_row_limit']['#config']['key'] = 'dblog.settings:row_limit';
+      }
+      break;
+
   }
 
 }
