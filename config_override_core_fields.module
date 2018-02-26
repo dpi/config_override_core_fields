@@ -90,6 +90,15 @@ function config_override_core_fields_form_alter(array &$form, FormStateInterface
       }
       break;
 
+    case 'update_settings':
+      // update.module.
+      // @see \Drupal\update\UpdateSettingsForm
+      $form['update_check_frequency']['#config']['key'] = 'update.settings:check.interval_days';
+      $form['update_check_disabled']['#config']['key'] = 'update.settings:check.disabled_extensions';
+      $form['update_notify_emails']['#config']['key'] = 'update.settings:notification.emails';
+      $form['update_notification_threshold']['#config']['key'] = 'update.settings:notification.threshold';
+      break;
+
   }
 
 }
