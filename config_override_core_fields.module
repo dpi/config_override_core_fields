@@ -33,6 +33,14 @@ function config_override_core_fields_form_alter(array &$form, FormStateInterface
       }
       break;
 
+    case 'system_file_system_settings':
+      // system.module.
+      // @see \Drupal\system\Form\FileSystemForm
+      $form['file_temporary_path']['#config']['key'] = 'system.file:path.temporary';
+      $form['file_default_scheme']['#config']['key'] = 'system.file:default_scheme';
+      $form['temporary_maximum_age']['#config']['key'] = 'system.file:temporary_maximum_age';
+      break;
+
   }
 
 }
