@@ -4,6 +4,15 @@ Provides hints to how form elements map to configuration objects.
 
 Copyright (C) 2018 Daniel Phin (@dpi)
 
+# Instructions
+
+This module does not expose any functionality on its own. You may have been
+asked by another module to install this module. 
+
+Recommended for use with [Config Override Indicator][config-override-indicator]
+
+[config-override-Indicator]: https://www.drupal.org/project/coi
+
 # License
 
 This program is free software; you can redistribute it and/or modify it under 
