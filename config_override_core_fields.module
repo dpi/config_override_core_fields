@@ -53,6 +53,14 @@ function config_override_core_fields_form_alter(array &$form, FormStateInterface
       }
       break;
 
+    case 'system_performance_settings':
+      // system.module.
+      // @see \Drupal\system\Form\PerformanceForm
+      $form['caching']['page_cache_maximum_age']['#config']['key'] = 'system.performance:cache.page.max_age';
+      $form['bandwidth_optimization']['preprocess_css']['#config']['key'] = 'system.performance:css.preprocess';
+      $form['bandwidth_optimization']['preprocess_js']['#config']['key'] = 'system.performance:js.preprocess';
+      break;
+
   }
 
 }
