@@ -61,6 +61,17 @@ function config_override_core_fields_form_alter(array &$form, FormStateInterface
       $form['bandwidth_optimization']['preprocess_js']['#config']['key'] = 'system.performance:js.preprocess';
       break;
 
+    case 'system_site_information_settings':
+      // system.module.
+      // @see \Drupal\system\Form\SiteInformationForm
+      $form["front_page"]["site_frontpage"]['#config']['key'] = 'system.site:page.front';
+      $form["site_information"]["site_mail"]['#config']['key'] = 'system.site:mail';
+      $form["site_information"]["site_name"]['#config']['key'] = 'system.site:name';
+      $form["site_information"]["site_slogan"]['#config']['key'] = 'system.site:slogan';
+      $form["error_page"]["site_403"]['#config']['key'] = 'system.site:page.403';
+      $form["error_page"]["site_404"]['#config']['key'] = 'system.site:page.404';
+      break;
+
   }
 
 }
